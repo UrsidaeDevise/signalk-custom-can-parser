@@ -1,0 +1,21 @@
+{
+    "data": [
+        {
+            "name": "Current_batt",
+            "bitStart": 7,
+            "bitLength": 32,
+            "endian": "MSB",
+            "resolution": 1,
+            "offset": -2147483648,
+            "units": "mA"
+        },
+        {
+            "name": "errorFlag_batt",
+            "bitStart": 32,
+            "bitLength": 1,
+            "endian": "MSB",
+            "resolution": 1,
+            "offset": 0
+        }
+    ]
+}

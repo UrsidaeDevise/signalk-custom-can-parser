@@ -1,7 +1,10 @@
 {
   "name": "signalk-custom-can-parser",
   "version": "0.1.0",
-  "description": "Plugin to singalk to read non NMEA2000 traaffic on CAN bus.",
+  "description": "Plugin to singalk to read nn NMEA2000 traaffic on CAN bus.",
+  "main": "index.js",
+
+  "author": "Björn Magnusson Westin",
   "keywords": [
     "signalk-custom-can-parser",
     "signalk-category-hardware"
@@ -10,5 +13,12 @@
   "signalk":{
     "displayName": "Custom CAN signals"
   },
-  "main": "index.js"
+  "license": "Apache-2.0",
+  "dependencies": {
+    "socketcan": "^4.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pbegg/orion-bms-to-signalk"
+  }
 }
