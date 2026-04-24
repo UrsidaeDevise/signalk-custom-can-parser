@@ -1,9 +1,9 @@
 {
-  "name": "signalk-custom-can-read",
+  "name": "signalk-custom-can-parser",
   "version": "0.1.0",
   "description": "Plugin to singalk to read non NMEA2000 traaffic on CAN bus.",
   "keywords": [
-    "signalk-custom-can-read",
+    "signalk-custom-can-parser",
     "signalk-category-hardware"
   ],
   "signalk-plugin-enabled-by-default": false,
