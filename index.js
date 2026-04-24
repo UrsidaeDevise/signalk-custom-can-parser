@@ -16,43 +16,6 @@ module.exports = function(app) {
   plugin.name = PLUGIN_NAME;
   plugin.description = 'Allows users to parse can data that are not directly supported by SignalK.';
 
-  plugin.schema = {
-    type: "object",
-    required: ["canInterface"],
-    properties: {
-      canInterface: {
-        type: "string",
-        title: "Can Interface",
-        description: "Name of can Interface can0..can1...",
-        }
-      /*ids: {
-        type: "array",
-        title: "CAN-ID",
-        items: {
-          type: "object",
-          required: ['ID', 'basePath'],
-          properties: {
-            id: {
-              type: 'number',
-              title: 'ID',
-              description: 'The ID to parse.'
-            },
-            basePath: {
-              type: 'string',
-              title: 'Base Path',
-              description: 'The path to map it to'
-            },
-            fields: {
-              type: 'string',
-              title: 'Data conversion field',
-              description: 'Comma seperated listed of data conversion, (not used yet).'
-            }
-          }
-        }
-      }*/
-    }
-  }
-
   plugin.start = function(options, restartPlugin) {
 
     app.debug("Plugin started");
@@ -103,6 +66,19 @@ module.exports = function(app) {
 
         // Here we put logic we need when the plugin stops
         app.debug("Plugin stopped");
+    };
+
+    plugin.schema = {
+        type: "object",
+        required: ["canInterface"],
+        properties: {
+            canInterface: {
+                type: "string",
+                title: "Can Interface",
+                description: "Name of can Interface can0..can1...",
+            },
+            // The plugin schema
+        },
     };
 
   return plugin
