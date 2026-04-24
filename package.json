@@ -1,0 +1,14 @@
+{
+  "name": "signalk-custom-can-read",
+  "version": "0.1.0",
+  "description": "Plugin to singalk to read non NMEA2000 traaffic on CAN bus.",
+  "keywords": [
+    "signalk-custom-can-read",
+    "signalk-category-hardware"
+  ],
+  "signalk-plugin-enabled-by-default": false,
+  "signalk":{
+    "displayName": "Custom CAN signals"
+  },
+  "main": "index.js"
+}
