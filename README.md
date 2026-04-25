@@ -8,4 +8,4 @@ Getting started
 3. Restart SignalK
 
 Configuration - Basic
-At the basic level all CAN messsage can be interpeded a data point is required to have the adress and the path you want to map it. The path is a template that you can specify any data field value or device instance for use in the path. The field value you want to use in the template should be surrounded by {} brackets.
+canInterface can0, can1 etc
