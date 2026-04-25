@@ -1,16 +1,21 @@
 {
   "name": "signalk-custom-can-parser",
-  "version": "0.2.0",
-  "description": "Plugin to singalk to read nn NMEA2000 traaffic on CAN bus.",
+  "version": "0.3.0",
+  "description": "Plugin for signalk to read non NMEA2000 traffic on CAN bus.",
   "main": "index.js",
   "author": "Björn Magnusson Westin",
   "keywords": [
     "signalk-custom-can-parser",
-    "signalk-category-hardware"
+    "signalk-category-hardware",
+    "signalk-node-server-plugin"
   ],
   "signalk-plugin-enabled-by-default": false,
   "license": "Apache-2.0",
   "dependencies": {
     "socketcan": "^4.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UrsidaeDevise/signalk-custom-can-parser."
   }
 }

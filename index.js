@@ -9,22 +9,21 @@ let channel;
 //create channel on given can port (vcan0 as test) normally can0/can1
 
 module.exports = function(app) {
-  var plugin = {};
-  var n2kCallback
+    var plugin = {};
 
-  plugin.id = PLUGIN_ID;
-  plugin.name = PLUGIN_NAME;
-  plugin.description = 'Allows users to parse can data that are not directly supported by SignalK.';
+    plugin.id = PLUGIN_ID;
+    plugin.name = PLUGIN_NAME;
+    plugin.description = 'Allows users to parse can data that are not directly supported by SignalK.';
 
-  plugin.start = function(options, restartPlugin) {
+    plugin.start = function (options, restartPlugin) {
 
     app.debug("Plugin started");
-        var channel = can.createRawChannel(options.canInterface, true);
+    var channel = can.createRawChannel(options.canInterface, true);
 
-        //create mask on can port to receive only 2 requried CANID's
-        //as listed in DBC file
-        // 0x6A6 => 06 A6
-        // 0x6A7 => 06 A7
+    //create mask on can port to receive only 2 requried CANID's
+    //as listed in DBC file
+    // 0x6A6 => 06 A6
+    // 0x6A7 => 06 A7
 
         channel.setRxFilters([
             { id: 0x6a6, mask: 0xfff, invert: false },
@@ -81,5 +80,5 @@ module.exports = function(app) {
         },
     };
 
-  return plugin
+    return plugin
 }
