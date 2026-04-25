@@ -16,6 +16,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/UrsidaeDevise/signalk-custom-can-parser."
+    "url": "git+https://github.com/UrsidaeDevise/signalk-custom-can-parser..git"
   }
 }
