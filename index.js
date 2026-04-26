@@ -46,13 +46,6 @@ module.exports = function(app) {
                                     
                                 },
                             ],
-                            meta: [
-                                {
-                                    description: "Current sensor, CAB500, on start battery.",
-                                    units: "A",
-
-                                }
-                            ]
                         },
                     ],
                 });
