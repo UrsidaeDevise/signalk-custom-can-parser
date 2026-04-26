@@ -27,6 +27,8 @@ module.exports = function(app) {
             { id: 0x6a7, mask: 0xfff, invert: false },
         ]);
 
+        
+
         channel.addListener("onMessage", function (msg) {
             msgId = getMsgID(msg.id);
             canData = msg.data.readBigUInt64BE();
@@ -42,6 +44,7 @@ module.exports = function(app) {
                                 {
                                     path: parsedData.path,
                                     value: parsedData.value,
+
                                 },
                             ],
                         },

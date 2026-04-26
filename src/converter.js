@@ -8,10 +8,11 @@ let parseFrame = function (parserLookup, data) {
     data = Number(data >> BigInt(bitShift));
     data = data & (2 ** parserLookup.bitLength - 1);
 
-    data = data * parserLookup.resolution + parserLookup.offset;
+    data = data * parserLookup.factor + parserLookup.offset;
     return {
         path: parserLookup.name,
         value: data,
+        unit: parserLookup.unit,
     };
     //
 };

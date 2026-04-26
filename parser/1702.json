@@ -5,17 +5,9 @@
             "bitStart": 7,
             "bitLength": 32,
             "endian": "MSB",
-            "resolution": 1,
+            "factor": 1,
             "offset": -2147483648,
-            "units": "mA"
-        },
-        {
-            "name": "errorFlag",
-            "bitStart": 32,
-            "bitLength": 1,
-            "endian": "MSB",
-            "resolution": 1,
-            "offset": 0
+            "unit": "mA"
         }
     ]
 }
