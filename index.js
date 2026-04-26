@@ -27,13 +27,12 @@ module.exports = function(app) {
             { id: 0x6a7, mask: 0xfff, invert: false },
         ]);
 
-
-
         channel.addListener("onMessage", function (msg) {
             msgId = getMsgID(msg.id);
             canData = msg.data.readBigUInt64BE();
             //console.log(canData);
-            //
+            
+
             for (const parserLookup of parser[msgId].data) {
                 parsedData = parseFrame(parserLookup, canData);
                 app.debug(parsedData);
@@ -44,9 +43,16 @@ module.exports = function(app) {
                                 {
                                     path: parsedData.path,
                                     value: parsedData.value,
-
+                                    
                                 },
                             ],
+                            meta: [
+                                {
+                                    description: "Current sensor, CAB500, on start battery.",
+                                    units: "A",
+
+                                }
+                            ]
                         },
                     ],
                 });
