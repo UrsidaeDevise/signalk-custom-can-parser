@@ -27,12 +27,12 @@ module.exports = function(app) {
             { id: 0x6a7, mask: 0xfff, invert: false },
         ]);
 
-        
+
 
         channel.addListener("onMessage", function (msg) {
             msgId = getMsgID(msg.id);
             canData = msg.data.readBigUInt64BE();
-            console.log(canData);
+            //console.log(canData);
             //
             for (const parserLookup of parser[msgId].data) {
                 parsedData = parseFrame(parserLookup, canData);
@@ -50,7 +50,7 @@ module.exports = function(app) {
                         },
                     ],
                 });
-                console.log(parsedData);
+                //console.log(parsedData);
             }
         });
 
