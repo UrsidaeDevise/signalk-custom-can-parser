@@ -5,9 +5,9 @@
             "bitStart": 7,
             "bitLength": 32,
             "endian": "MSB",
-            "factor": 0.001,
-            "offset": -2147483.648,
-            "unit": "A"
+            "factor": 1,
+            "offset": -2147483648,
+            "unit": "mA"
         }
     ]
 }
