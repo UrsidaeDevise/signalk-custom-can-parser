@@ -1,0 +1,13 @@
+{
+    "data": [
+        {
+            "name": "current2",
+            "bitStart": 7,
+            "bitLength": 32,
+            "endian": "MSB",
+            "factor": 1,
+            "offset": -2147483648,
+            "unit": "mA"
+        }
+    ]
+}

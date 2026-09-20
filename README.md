@@ -1,7 +1,7 @@
 signalk-custom-can-parser
 
 Allows users to parse can data that are not directly supported by SignalK.
-Currently it reads the current of a CAB500 sensor at adress 0x6A6, 1702, and it will be shown in signalk as Current.value
+Currently it reads the current of a CAB500 sensors at adresses 0x6A3/6A6, 1699/1702, and it will be shown in signalk as current2/current
 
 Getting started
 

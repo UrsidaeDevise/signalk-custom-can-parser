@@ -17,14 +17,14 @@ module.exports = function(app) {
         app.debug("Plugin started");
         var channel = can.createRawChannel(options.canInterface, true);
 
-        //create mask on can port to receive only 2 requried CANID's
-        //as listed in DBC file
+        // create mask on can port to receive only 2 required CANID's
+        // as listed in DBC file
         // 0x6A6 => 06 A6
-        // 0x6A7 => 06 A7
+        // 0x6A3 => 06 A3
 
         channel.setRxFilters([
             { id: 0x6a6, mask: 0xfff, invert: false },
-            { id: 0x6a7, mask: 0xfff, invert: false },
+            { id: 0x6a3, mask: 0xfff, invert: false },
         ]);
 
         channel.addListener("onMessage", function (msg) {
