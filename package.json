@@ -10,20 +10,34 @@
     "signalk-node-server-plugin"
   ],
   "signalk-plugin-enabled-by-default": false,
+  "signalk": {
+    "displayName": "Custom CAN-bus parser",
+    "appIcon": "./docs/icon-128.png",
+    "screenshots": [
+      "./docs/screenshots/config.png"
+    ],
+    "requires": [
+      ""
+    ],
+    "recommends": [
+      "@signalk/calibration"
+    ]
+  },
   "license": "Apache-2.0",
   "dependencies": {
-    "socketcan": "^4.0.2",
-    "node-gyp": "^13.0.1"
+    "socketcan": "^4.0.2"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/UrsidaeDevise/signalk-custom-can-parser.git"
   },
-  "scripts": {
-    "build": "node-gyp build",
-    "install": "node-gyp rebuild"
-  },
   "os": [
     "linux"
-  ]
+  ],
+  "devDependencies": {
+    "node-gyp": "^13.1.0"
+  },
+  "allowScripts": {
+    "socketcan@4.3.2": true
+  }
 }
