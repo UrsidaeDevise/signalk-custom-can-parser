@@ -13,7 +13,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "socketcan": "^4.0.2",
-    "node-gyp": "^13.0.1",
+    "node-gyp": "^13.0.1"
   },
   "repository": {
     "type": "git",
