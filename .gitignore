@@ -1,0 +1,67 @@
+node_modules
+!test/plugin-test-config/node_modules/
+
+package-lock.json
+
+*.tsbuildinfo
+
+.eslintcache
+
+lib/
+dist/
+
+.DS_Store
+.vscode/
+*.db
+logs/*
+bower_components
+settings/ssl-key.pem
+settings/ssl-cert.pem
+/*.iml
+
+*.tgz
+work/
+data/
+plugin-config-data/
+unitpreferences/custom-units-definitions.json
+unitpreferences/custom/
+unitpreferences/presets/custom/
+
+test/plugin-test-config/.npmrc
+test/plugin-test-config/plugin-config-data/
+test/plugin-test-config/ssl-cert.pem
+test/plugin-test-config/ssl-key.pem
+test/plugin-test-config/baseDeltas.json
+test/plugin-test-config/unitpreferences/
+
+test/server-test-config/applicationData/
+test/server-test-config/unitpreferences/
+test/server-test-config/ssl-cert.pem
+test/server-test-config/ssl-key.pem
+test/server-test-config/plugin-config-data/
+test/server-test-config/sources-cache.json
+test/server-test-config/baseDeltas.json
+test/server-test-config/appstore-cache/
+
+docs/built
+
+# WASM build artifacts
+*.wasm  
+
+# .net builds
+jco-output/
+obj/
+bin/
+Debug/
+Release/
+*.ps1
+nul
+
+# wasmtime build artifacts
+*.wasm
+
+# debug artefacts
+*.sln
+test/server-test-config/debug
+# Per-developer local Makefile (deploy shortcuts, scratch targets)
+Makefile.local
