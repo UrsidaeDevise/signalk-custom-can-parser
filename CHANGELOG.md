@@ -11,6 +11,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - GUI for new message
 - Better guide
 
+## [0.6.9-beta] - 2026-10-07
+## Fixed
+- Testing
+
+## [0.6.7-8] - 2026-10-06
+### Fixed
+- Testing a few things
 ## [0.6.6] - 2026-10-06
 ### Fixed
 - Install?

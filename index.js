@@ -1,27 +1,44 @@
 const parser = require("./parser/index.js");
 const { getMsgID, parseFrame } = require("./src/converter");
 
-var can = require("socketcan");
-let channel;
+//var can = require("socketcan");
+//let channel;
 //create channel on given can port (vcan0 as test) normally can0/can1
 
 module.exports = function(app) {
-    var plugin = {};
-
-    plugin.id = "signalk-custom-can-parser";
-    plugin.name = "Custom CAN Parser";
-    plugin.description = "Allows users to parse can data that are not directly supported by SignalK.";
+    const plugin = {
+      id: "signalk-custom-can-parser",
+      name: "Custom CAN Parser",
+      description: "Allows users to parse can data that are not directly supported by SignalK.",
+    };
+    
+    let channel = null;
 
     plugin.start = function (options, restartPlugin) {
+        let can;
+        app.debug("Plugin beginning");
+        try {
+          can = require("socketcan");
+        } catch (err) {
+          app.setPluginError(`SocketCAN native module failed to load: ${err.message}`);
+          app.error(err);
+          return;
+        }
 
-        app.debug("Plugin started");
-        var channel = can.createRawChannel(options.canInterface, true);
+        if (!options || !options.canInterface) {
+          app.setPluginError("No CAN interface configured");
+          return;
+        }
 
+        try {
+          channel = can.createRawChannel(options.canInterface, true);
+        } catch (err) {
+          app.setPluginError(`Could not open ${options.canInterface}: ${err.message}`);
+          return;
+        }
         // create mask on can port to receive only 2 required CANID's
         // as listed in DBC file
-        // 0x6A6 => 06 A6
-        // 0x6A3 => 06 A3
-
+        
         channel.setRxFilters([
             { id: 0x6a6, mask: 0xfff, invert: false },
             { id: 0x6a3, mask: 0xfff, invert: false },
@@ -55,16 +72,20 @@ module.exports = function(app) {
         });
 
         channel.start();
+        app.setPluginStatus(`Listening on ${options.canInterface}`);
+        app.debug("Plugin started");
     };
 
     plugin.stop = function () {
-        if (channel) {
-            channel.stop();
+      if (channel) {
+        try {
+          channel.stop();
+        } catch (err) {
+          app.error(err);
         }
-        channel = undefined;
-
-        // Here we put logic we need when the plugin stops
-        app.debug("Plugin stopped");
+        channel = null;
+      }
+      app.debug("Plugin stopped");
     };
 
     plugin.schema = {
@@ -76,9 +97,8 @@ module.exports = function(app) {
                 title: "Can Interface",
                 description: "Name of can Interface can0..can1...",
             },
-            // The plugin schema
         },
     };
 
     return plugin
-}
+};
