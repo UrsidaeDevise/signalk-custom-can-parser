@@ -1,7 +1,7 @@
 signalk-custom-can-parser
 
 Allows users to parse can data that are not directly supported by SignalK.
-Currently it reads the current of a CAB500 sensors at adresses 0x6A3/6A6, 1699/1702, and it will be shown in signalk as current2/current
+Currently it reads the current of a CAB500 sensors at adresses 0x6A0/6A3/6A6, 1696/1699/1702, and it will be shown in signalk as Current_alt/Current_batt/Current
 
 Getting started
 
@@ -9,10 +9,11 @@ Getting started
 2. Browse to Server => Plugin => Custom CAN parser choose which CAN-bus it should listen on, can0, can1 or vcan0 and then enable it.
 3. Restart SignalK
 
-If it dosen't start, you get "require("../build/Release/can.node")", it might be due to that socketcan is not isntall properly. If so:
+If it dosen't start, you get "require("../build/Release/can.node")", it might be due to that socketcan is not installed properly. If so:
 
 1. cd ~signalk/node_modules/socketcan/
 2. npm install socketcan
+3. npx node-gyp rebuild
 
 That builds the application.
 

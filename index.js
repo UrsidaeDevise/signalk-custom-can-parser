@@ -25,6 +25,7 @@ module.exports = function(app) {
         channel.setRxFilters([
             { id: 0x6a6, mask: 0xfff, invert: false },
             { id: 0x6a3, mask: 0xfff, invert: false },
+            { id: 0x6a0, mask: 0xfff, invert: false },
         ]);
 
         channel.addListener("onMessage", function (msg) {

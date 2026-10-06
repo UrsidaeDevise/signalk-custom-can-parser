@@ -1,7 +1,7 @@
 {
     "data": [
         {
-            "name": "current2",
+            "name": "Current_batt",
             "bitStart": 7,
             "bitLength": 32,
             "endian": "MSB",
