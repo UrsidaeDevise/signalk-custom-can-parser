@@ -20,7 +20,8 @@
       ""
     ],
     "recommends": [
-      "@signalk/calibration"
+      "@signalk/calibration",
+      "signalk-path-mapper"
     ]
   },
   "license": "Apache-2.0",
