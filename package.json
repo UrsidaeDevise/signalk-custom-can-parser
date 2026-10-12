@@ -1,6 +1,6 @@
 {
   "name": "signalk-custom-can-parser",
-  "version": "0.6.8",
+  "version": "0.6.9",
   "description": "Plugin for signalk to read non NMEA2000 traffic on CAN bus.",
   "main": "index.js",
   "author": "Björn Magnusson Westin",
@@ -35,6 +35,7 @@
   "os": [
     "linux"
   ],
+  "engines": { "node": ">=22" },
   "devDependencies": {
     "node-gyp": "^13.1.0"
   },

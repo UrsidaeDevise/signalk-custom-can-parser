@@ -6,21 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 ### Prio 1
 - Fix installation
-- Reliable operation
 ### Prio 2
 - GUI for new message
 - Better guide
 
-## [0.6.9-beta] - 2026-10-07
+## [0.6.9] - 2026-10-12
 ## Fixed
-- Testing
+- Gracious shutdown
+- Error message if socketcan not installed
+- Added node v22 requirement
 
 ## [0.6.7-8] - 2026-10-06
 ### Fixed
 - Testing a few things
 ## [0.6.6] - 2026-10-06
 ### Fixed
-- Install?
+- Install - no
 ### Added
 - Icon and screenshot
 

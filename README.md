@@ -12,7 +12,6 @@ Getting started
 If it dosen't start, you get "require("../build/Release/can.node")", it might be due to that socketcan is not installed properly. If so:
 
 1. cd ~signalk/node_modules/socketcan/
-2. npm install socketcan
 3. npx node-gyp rebuild
 
 That builds the application.
